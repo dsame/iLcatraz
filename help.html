@@ -4,6 +4,30 @@
         </head>
     <body>
         <h1>iLcatraz Help</h1>
-        
+        /media/playlists/F84F6DB889F6AD62/tracks/23A23165199F41A6
+        <ul>
+            <li>
+                <p>/media/playlists</p>
+                <p>gets list of all playlists</p>
+                </li>
+            <li>
+                <p>/media/playlists/<tt>ID</tt></p>
+                <p>gets properties of a playlist with the id=<tt>ID</tt></p>
+            </li>
+            <li>
+                <p>/media/playlists/<tt>ID</tt>/tracks</p>
+                <p>gets list of tracks of a playlist with the id=<tt>ID</tt></p>
+                    </li>
+            <li>
+                <p>/media/playlists/<tt>ID</tt>/tracks/<tt>ID</tt></p>
+                <p>gets properties of a track with the given ID of a playlist with the id=<tt>ID</tt></p>
+                    </li>
+            <li>
+                <p>/media/playlists/<tt>ID</tt>/tracks/<tt>ID</tt>/file</p>
+                <p>gets file content of a track with the given ID of a playlist with the id=<tt>ID</tt></p>
+                    </li>
+     </ul>
+        <p>If requests  have a result of an array of the resources the header <tt>X-Count</tt> contains length of the result. Use <tt>HEAD</tt> method to estimate the request cost.</p>
+        <p>If requests  have a file as the result then  the header <tt>X-Loction</tt> contains path of the file inside iTunes Library. Use <tt>HEAD</tt> method to if necessary.</p>
         </body>
 </html>
