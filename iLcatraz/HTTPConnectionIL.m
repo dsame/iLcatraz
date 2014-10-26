@@ -1,11 +1,12 @@
 #import "HTTPConnectionIL.h"
 #import "RESTResponse.h"
 #import "HTTPFileResponse.h"
+#import "HTTPFileResponse.h"
 #import "ITunesService.h"
 #import "HTTPMessage.h"
 #import "DDLog.h"
 
-//static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 
 @implementation HTTPConnectionIL
@@ -44,8 +45,20 @@
         NSArray *components=[path componentsSeparatedByString:@"/"];
         
         //DDLogInfo(@"components=%@",components);
-        if ([components count]<2)
+        if ([components count]<2){
             return [[RESTResponse alloc] initWithJSON:@"Invalid Request" andStatus:404];
+        }
+        
+        if ([[components objectAtIndex:1] isEqualTo:@"help"]){
+            NSString *webPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"help.html"];
+            
+            DDLogInfo(@"WebPath=%@",webPath);
+            return [[HTTPFileResponse alloc] initWithFilePath:webPath forConnection:self];
+        }
+        
+        if (![[components objectAtIndex:1] isEqual:@"media"]){
+            return [[RESTResponse alloc] initWithText:@"Only help and media resources are available now" andStatus:404];
+        }
         
         if ([[components objectAtIndex:1] isEqual:@"sources"]){
             if ([components count]==2){

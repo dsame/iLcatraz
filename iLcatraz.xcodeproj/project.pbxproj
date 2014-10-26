@@ -47,6 +47,12 @@
 		41C8B40D19FC0D4C00C9BD27 /* HTTPConnectionIL.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8B40719FC0D4C00C9BD27 /* HTTPConnectionIL.m */; };
 		41C8B40E19FC0D4C00C9BD27 /* ITunesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8B40819FC0D4C00C9BD27 /* ITunesService.m */; };
 		41C8B40F19FC0D4C00C9BD27 /* RESTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8B40A19FC0D4C00C9BD27 /* RESTResponse.m */; };
+		41C8B41119FC197B00C9BD27 /* clogos.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B41019FC197B00C9BD27 /* clogos.iconset */; };
+		41C8B41319FC1F6700C9BD27 /* glogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B41219FC1F6700C9BD27 /* glogo.png */; };
+		41C8B41E19FCF20500C9BD27 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B41B19FCF20500C9BD27 /* Preferences.xib */; };
+		41C8B41F19FCF20500C9BD27 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8B41D19FCF20500C9BD27 /* PreferencesController.m */; };
+		41C8B42119FD008700C9BD27 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B42019FD008700C9BD27 /* README.md */; };
+		41C8B42619FD1C3200C9BD27 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B42519FD1C3200C9BD27 /* help.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +143,13 @@
 		41C8B40A19FC0D4C00C9BD27 /* RESTResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTResponse.m; sourceTree = "<group>"; };
 		41C8B40B19FC0D4C00C9BD27 /* RESTResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTResponse.h; sourceTree = "<group>"; };
 		41C8B40C19FC0D4C00C9BD27 /* HTTPConnectionIL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnectionIL.h; sourceTree = "<group>"; };
+		41C8B41019FC197B00C9BD27 /* clogos.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = clogos.iconset; sourceTree = "<group>"; };
+		41C8B41219FC1F6700C9BD27 /* glogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glogo.png; sourceTree = "<group>"; };
+		41C8B41B19FCF20500C9BD27 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Preferences.xib; path = iLcatraz/Preferences.xib; sourceTree = "<group>"; };
+		41C8B41C19FCF20500C9BD27 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferencesController.h; path = iLcatraz/PreferencesController.h; sourceTree = "<group>"; };
+		41C8B41D19FCF20500C9BD27 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesController.m; path = iLcatraz/PreferencesController.m; sourceTree = "<group>"; };
+		41C8B42019FD008700C9BD27 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		41C8B42519FD1C3200C9BD27 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +176,9 @@
 		4162746F19FC0ACC0040A86D = {
 			isa = PBXGroup;
 			children = (
+				41C8B42419FD196B00C9BD27 /* Root */,
+				41C8B42019FD008700C9BD27 /* README.md */,
+				41C8B41419FC1FE200C9BD27 /* Preferences */,
 				41C8B3E819FC0C0700C9BD27 /* CocoaLumberjack */,
 				41C8B3F919FC0C0700C9BD27 /* CocoaAsyncSocket */,
 				41C8B3AE19FC0BAA00C9BD27 /* HTTPServer */,
@@ -170,6 +186,7 @@
 				4162749F19FC0ACD0040A86D /* iLcatrazTests */,
 				4162747A19FC0ACC0040A86D /* Frameworks */,
 				4162747919FC0ACC0040A86D /* Products */,
+				41C8B41019FC197B00C9BD27 /* clogos.iconset */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +222,7 @@
 		4162748119FC0ACC0040A86D /* iLcatraz */ = {
 			isa = PBXGroup;
 			children = (
+				41C8B41219FC1F6700C9BD27 /* glogo.png */,
 				41C8B40719FC0D4C00C9BD27 /* HTTPConnectionIL.m */,
 				41C8B40819FC0D4C00C9BD27 /* ITunesService.m */,
 				41C8B40919FC0D4C00C9BD27 /* ITunesService.h */,
@@ -363,6 +381,24 @@
 			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
+		41C8B41419FC1FE200C9BD27 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				41C8B41B19FCF20500C9BD27 /* Preferences.xib */,
+				41C8B41C19FCF20500C9BD27 /* PreferencesController.h */,
+				41C8B41D19FCF20500C9BD27 /* PreferencesController.m */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		41C8B42419FD196B00C9BD27 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				41C8B42519FD1C3200C9BD27 /* help.html */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -441,10 +477,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				41C8B40519FC0C0700C9BD27 /* About.txt in Resources */,
+				41C8B42619FD1C3200C9BD27 /* help.html in Resources */,
 				4162748619FC0ACC0040A86D /* InfoPlist.strings in Resources */,
+				41C8B42119FD008700C9BD27 /* README.md in Resources */,
 				4162749419FC0ACC0040A86D /* Images.xcassets in Resources */,
 				4162748C19FC0ACC0040A86D /* Credits.rtf in Resources */,
+				41C8B41319FC1F6700C9BD27 /* glogo.png in Resources */,
 				4162749219FC0ACC0040A86D /* MainMenu.xib in Resources */,
+				41C8B41119FC197B00C9BD27 /* clogos.iconset in Resources */,
+				41C8B41E19FCF20500C9BD27 /* Preferences.xib in Resources */,
 				41C8B40419FC0C0700C9BD27 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C8B41F19FCF20500C9BD27 /* PreferencesController.m in Sources */,
 				41C8B3DB19FC0BAA00C9BD27 /* HTTPServer.m in Sources */,
 				41C8B3D919FC0BAA00C9BD27 /* HTTPConnection.m in Sources */,
 				41C8B3E119FC0BAA00C9BD27 /* HTTPDynamicFileResponse.m in Sources */,
@@ -624,10 +666,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iLcatraz/iLcatraz-Prefix.pch";
 				INFOPLIST_FILE = "iLcatraz/iLcatraz-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -637,10 +681,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iLcatraz/iLcatraz-Prefix.pch";
 				INFOPLIST_FILE = "iLcatraz/iLcatraz-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -1251,7 +1251,6 @@ static DDTTYLogger *sharedInstance;
 			
 			// Calculate timestamp.
 			// The technique below is faster than using NSDateFormatter.
-			
 			NSDateComponents *components = [calendar components:calendarUnitFlags fromDate:logMessage->timestamp];
 			
 			NSTimeInterval epoch = [logMessage->timestamp timeIntervalSinceReferenceDate];
