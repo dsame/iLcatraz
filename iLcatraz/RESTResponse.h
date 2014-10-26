@@ -13,6 +13,7 @@
 - (id)initWithText:(NSString *)text andStatus:(NSUInteger)aStatus;
 - (id)initWithJSON:(NSString *)json andStatus:(NSUInteger)status;
 - (id)initWithJSON:(NSString *)json status:(NSUInteger)status andCount:(NSInteger) count;
+- (id)initWithJSON:(NSString *)json status:(NSUInteger)aStatus andLocation:(NSString*) location;
 - (id)initWith405;
 
 @end

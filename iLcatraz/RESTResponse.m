@@ -41,6 +41,18 @@ return response;
 	return self;
 };
 
+- (id)initWithJSON:(NSString *)json status:(NSUInteger)aStatus andLocation:(NSString*) location{
+	if((self = [super init]))
+	{
+		HTTPLogTrace();
+		
+		offset = 0;
+		jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+        headers = [NSDictionary dictionaryWithObjectsAndKeys: @"application/json; charset=utf-8",@"Content-Type",location,@"X-iTunes-Location",nil];
+        status=aStatus;
+	}
+	return self;
+};
 - (id)initWithJSON:(NSString *)json andStatus:(NSUInteger)aStatus
 {
 	if((self = [super init]))

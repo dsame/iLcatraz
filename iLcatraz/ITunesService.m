@@ -280,7 +280,7 @@ static NSDateFormatter* dateFormatter=NULL;
             if (d!=NULL) {
                 v=[ITunesService descriptor2json:d];
                 [ret appendString:@",\"comment\":"];
-                [ret appendString:[[v stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"] stringByReplacingOccurrencesOfString:@"\r" withString:@"\\r"]];
+                [ret appendString:v];
             }
             d=[descriptor descriptorForKeyword:'pEQp'];
             if (d!=NULL) {
@@ -567,6 +567,7 @@ static NSDateFormatter* dateFormatter=NULL;
                     
                 case 'kVdM': return @"\"movie\"";
                 case 'kVdV': return @"\"music video\"";
+                case 'kVdT': return @"\"TV show\"";
                     
                 default: return  [NSString stringWithFormat:@"Enum: 0x%lx %@",(long)v,descriptor];
             }
@@ -586,9 +587,10 @@ static NSDateFormatter* dateFormatter=NULL;
             return [NSString stringWithFormat:@"%d",[descriptor int32Value]];
         case 'utxt':
             return [[@"\""
-                     stringByAppendingString:[[[descriptor stringValue] stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"]
-                                              stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""]]
-                    stringByAppendingString:@"\""];
+                     stringByAppendingString:[[[[[descriptor stringValue] stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"]
+                                              stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""]stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]stringByReplacingOccurrencesOfString:@"\r" withString:@"\\r"]]
+                    stringByAppendingString:@"\""];            
+            
         case 'ldt ': //typeLongDateTime
         {
             NSDate *resultDate = nil;
@@ -728,5 +730,30 @@ static NSDateFormatter* dateFormatter=NULL;
 - (NSString*) locationForTrackWithID:(NSString*) pid{
     return [self resultAsPath:[NSString stringWithFormat:@"tell application \"iTunes\"\n location of first item of (tracks whose persistent ID is \"%@\")\n end tell",pid]];
 }
+
+//v2
+- (NSInteger) countOfMediaPlaylists{
+    return [self resultAsCount:@"tell application \"iTunes\"\n count of playlists\n end tell"];
+};
+- (NSString*) jsonMediaPlaylists {
+    return [self jsonForCode:@"tell application \"iTunes\"\n properties of playlists\n end tell"];
+}
+- (NSString*) jsonMediaPlaylistWithID:(NSString*)pid{
+        return [self jsonForCode:[NSString stringWithFormat:@"tell application \"iTunes\"\n properties of first item of (playlists whose persistent ID is \"%@\")\n end tell",pid]];
+};
+- (NSString*) jsonTrackWithID:(NSString*)tid ofPlaysitWithID:(NSString*)pid{
+    return [self jsonForCode:[NSString stringWithFormat:@"tell application \"iTunes\"\n properties of first item of (tracks of (first item  of (playlists whose persistent ID is \"%@\")) whose  persistent ID is \"%@\")\n end tell",pid,tid]];
+};
+- (NSString*) pathForTrackWithID:(NSString*)tid ofPlaysitWithID:(NSString*)pid{
+    return [self resultAsPath:[NSString stringWithFormat:@"tell application \"iTunes\"\n location of first item of (tracks of (first item  of (playlists whose persistent ID is \"%@\")) whose  persistent ID is \"%@\")\n end tell",pid,tid]];
+};
+- (NSString*) locationForTrackPath:(NSString*)path{
+     NSArray *components=[path componentsSeparatedByString:@"iTunes Media/"];
+    if ([components count]<2)
+        return path;
+    else
+        return [components objectAtIndex:1];
+};
+
 
 @end
