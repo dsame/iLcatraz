@@ -660,7 +660,7 @@ static NSDateFormatter* dateFormatter=NULL;
     NSAppleEventDescriptor* returnDescriptor = [self resultForCode:code];
     return (NSInteger)[returnDescriptor int32Value];
 }
-- (NSString*) resultAsPath:(NSString *)code
+- (NSString*) copyResultAsString:(NSString *)code
 {
     NSAppleEventDescriptor* descriptor=[self resultForCode:code];
     CFStringRef posixPath = NULL;
@@ -689,7 +689,7 @@ static NSDateFormatter* dateFormatter=NULL;
                                             kCFURLPOSIXPathStyle );
         CFRelease( myURLRef );
     }
-    
+    //TODO: Memory leak, i do not know how to avoid
     return (__bridge NSString *)posixPath;
 }
 
@@ -728,7 +728,7 @@ static NSDateFormatter* dateFormatter=NULL;
     return [self jsonForCode:[NSString stringWithFormat:@"tell application \"iTunes\"\n properties of first item of (tracks whose persistent ID is \"%@\")\n end tell",pid]];
 }
 - (NSString*) locationForTrackWithID:(NSString*) pid{
-    return [self resultAsPath:[NSString stringWithFormat:@"tell application \"iTunes\"\n location of first item of (tracks whose persistent ID is \"%@\")\n end tell",pid]];
+    return [self copyResultAsString:[NSString stringWithFormat:@"tell application \"iTunes\"\n location of first item of (tracks whose persistent ID is \"%@\")\n end tell",pid]];
 }
 
 //v2
@@ -745,7 +745,7 @@ static NSDateFormatter* dateFormatter=NULL;
     return [self jsonForCode:[NSString stringWithFormat:@"tell application \"iTunes\"\n properties of first item of (tracks of (first item  of (playlists whose persistent ID is \"%@\")) whose  persistent ID is \"%@\")\n end tell",pid,tid]];
 };
 - (NSString*) pathForTrackWithID:(NSString*)tid ofPlaysitWithID:(NSString*)pid{
-    return [self resultAsPath:[NSString stringWithFormat:@"tell application \"iTunes\"\n location of first item of (tracks of (first item  of (playlists whose persistent ID is \"%@\")) whose  persistent ID is \"%@\")\n end tell",pid,tid]];
+    return [self copyResultAsString:[NSString stringWithFormat:@"tell application \"iTunes\"\n location of first item of (tracks of (first item  of (playlists whose persistent ID is \"%@\")) whose  persistent ID is \"%@\")\n end tell",pid,tid]];
 };
 - (NSString*) locationForTrackPath:(NSString*)path{
      NSArray *components=[path componentsSeparatedByString:@"iTunes Media/"];

@@ -10,7 +10,8 @@
 
 @implementation FileResponse
 - (id)initWithFilePath:(NSString *)aFilePath andLocation:(NSString*)location forConnection:(HTTPConnection *)aConnection{
-    if (self==[super initWithFilePath:aFilePath forConnection:aConnection]){
+    self=[super initWithFilePath:aFilePath forConnection:aConnection];
+    if (self!=NULL){
         headers = [NSDictionary dictionaryWithObjectsAndKeys:location,@"X-iTunes-Location",nil];
     };
     return self;
