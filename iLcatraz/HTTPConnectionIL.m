@@ -156,7 +156,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
              /media/<bad>
              */
             
-            return [[RESTResponse alloc] initWithJSON:[NSString stringWithFormat:@"\"%@\" is not known resource of the media library",[components objectAtIndex:2]] andStatus:404];
+            return [[RESTResponse alloc] initWithJSON:[NSString stringWithFormat:@"\"%@\" is not known resource of the media library. \"playlists\" expected.",[components objectAtIndex:2]] andStatus:404];
         }
         
         if (ret!=NULL)

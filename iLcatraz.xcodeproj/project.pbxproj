@@ -12,7 +12,6 @@
 		4162748819FC0ACC0040A86D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4162748719FC0ACC0040A86D /* main.m */; };
 		4162748C19FC0ACC0040A86D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4162748A19FC0ACC0040A86D /* Credits.rtf */; };
 		4162748F19FC0ACC0040A86D /* me_dsa_iLcatrazAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4162748E19FC0ACC0040A86D /* me_dsa_iLcatrazAppDelegate.m */; };
-		4162749219FC0ACC0040A86D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4162749019FC0ACC0040A86D /* MainMenu.xib */; };
 		4162749419FC0ACC0040A86D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4162749319FC0ACC0040A86D /* Images.xcassets */; };
 		4162749B19FC0ACD0040A86D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4162749A19FC0ACD0040A86D /* XCTest.framework */; };
 		4162749C19FC0ACD0040A86D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4162747B19FC0ACC0040A86D /* Cocoa.framework */; };
@@ -54,6 +53,7 @@
 		41C8B42119FD008700C9BD27 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B42019FD008700C9BD27 /* README.md */; };
 		41C8B42619FD1C3200C9BD27 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B42519FD1C3200C9BD27 /* help.html */; };
 		41C8B42919FD2DEE00C9BD27 /* FileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8B42819FD2DEE00C9BD27 /* FileResponse.m */; };
+		41C8B42C19FD888200C9BD27 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B42A19FD888200C9BD27 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +79,6 @@
 		4162748B19FC0ACC0040A86D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		4162748D19FC0ACC0040A86D /* me_dsa_iLcatrazAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = me_dsa_iLcatrazAppDelegate.h; sourceTree = "<group>"; };
 		4162748E19FC0ACC0040A86D /* me_dsa_iLcatrazAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = me_dsa_iLcatrazAppDelegate.m; sourceTree = "<group>"; };
-		4162749119FC0ACC0040A86D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4162749319FC0ACC0040A86D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4162749919FC0ACD0040A86D /* iLcatrazTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iLcatrazTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4162749A19FC0ACD0040A86D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -153,6 +152,7 @@
 		41C8B42519FD1C3200C9BD27 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 		41C8B42719FD2DEE00C9BD27 /* FileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileResponse.h; sourceTree = "<group>"; };
 		41C8B42819FD2DEE00C9BD27 /* FileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileResponse.m; sourceTree = "<group>"; };
+		41C8B42B19FD888200C9BD27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +225,7 @@
 		4162748119FC0ACC0040A86D /* iLcatraz */ = {
 			isa = PBXGroup;
 			children = (
+				41C8B42A19FD888200C9BD27 /* MainMenu.xib */,
 				41C8B41219FC1F6700C9BD27 /* glogo.png */,
 				41C8B40719FC0D4C00C9BD27 /* HTTPConnectionIL.m */,
 				41C8B40819FC0D4C00C9BD27 /* ITunesService.m */,
@@ -234,7 +235,6 @@
 				41C8B40C19FC0D4C00C9BD27 /* HTTPConnectionIL.h */,
 				4162748D19FC0ACC0040A86D /* me_dsa_iLcatrazAppDelegate.h */,
 				4162748E19FC0ACC0040A86D /* me_dsa_iLcatrazAppDelegate.m */,
-				4162749019FC0ACC0040A86D /* MainMenu.xib */,
 				4162749319FC0ACC0040A86D /* Images.xcassets */,
 				4162748219FC0ACC0040A86D /* Supporting Files */,
 				41C8B42719FD2DEE00C9BD27 /* FileResponse.h */,
@@ -484,11 +484,11 @@
 				41C8B40519FC0C0700C9BD27 /* About.txt in Resources */,
 				41C8B42619FD1C3200C9BD27 /* help.html in Resources */,
 				4162748619FC0ACC0040A86D /* InfoPlist.strings in Resources */,
+				41C8B42C19FD888200C9BD27 /* MainMenu.xib in Resources */,
 				41C8B42119FD008700C9BD27 /* README.md in Resources */,
 				4162749419FC0ACC0040A86D /* Images.xcassets in Resources */,
 				4162748C19FC0ACC0040A86D /* Credits.rtf in Resources */,
 				41C8B41319FC1F6700C9BD27 /* glogo.png in Resources */,
-				4162749219FC0ACC0040A86D /* MainMenu.xib in Resources */,
 				41C8B41119FC197B00C9BD27 /* clogos.iconset in Resources */,
 				41C8B41E19FCF20500C9BD27 /* Preferences.xib in Resources */,
 				41C8B40419FC0C0700C9BD27 /* README.txt in Resources */,
@@ -579,20 +579,20 @@
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		4162749019FC0ACC0040A86D /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4162749119FC0ACC0040A86D /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
 		416274A219FC0ACD0040A86D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				416274A319FC0ACD0040A86D /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		41C8B42A19FD888200C9BD27 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41C8B42B19FD888200C9BD27 /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
