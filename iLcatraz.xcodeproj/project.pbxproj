@@ -53,7 +53,7 @@
 		41C8B42119FD008700C9BD27 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B42019FD008700C9BD27 /* README.md */; };
 		41C8B42619FD1C3200C9BD27 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B42519FD1C3200C9BD27 /* help.html */; };
 		41C8B42919FD2DEE00C9BD27 /* FileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8B42819FD2DEE00C9BD27 /* FileResponse.m */; };
-		41C8B42C19FD888200C9BD27 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B42A19FD888200C9BD27 /* MainMenu.xib */; };
+		41C8B43519FD8B6200C9BD27 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C8B43319FD8B6200C9BD27 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,7 +152,7 @@
 		41C8B42519FD1C3200C9BD27 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 		41C8B42719FD2DEE00C9BD27 /* FileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileResponse.h; sourceTree = "<group>"; };
 		41C8B42819FD2DEE00C9BD27 /* FileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileResponse.m; sourceTree = "<group>"; };
-		41C8B42B19FD888200C9BD27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		41C8B43419FD8B6200C9BD27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +225,7 @@
 		4162748119FC0ACC0040A86D /* iLcatraz */ = {
 			isa = PBXGroup;
 			children = (
-				41C8B42A19FD888200C9BD27 /* MainMenu.xib */,
+				41C8B43219FD8B6200C9BD27 /* Base.lproj */,
 				41C8B41219FC1F6700C9BD27 /* glogo.png */,
 				41C8B40719FC0D4C00C9BD27 /* HTTPConnectionIL.m */,
 				41C8B40819FC0D4C00C9BD27 /* ITunesService.m */,
@@ -404,6 +404,14 @@
 			name = Root;
 			sourceTree = "<group>";
 		};
+		41C8B43219FD8B6200C9BD27 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				41C8B43319FD8B6200C9BD27 /* MainMenu.xib */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -484,7 +492,7 @@
 				41C8B40519FC0C0700C9BD27 /* About.txt in Resources */,
 				41C8B42619FD1C3200C9BD27 /* help.html in Resources */,
 				4162748619FC0ACC0040A86D /* InfoPlist.strings in Resources */,
-				41C8B42C19FD888200C9BD27 /* MainMenu.xib in Resources */,
+				41C8B43519FD8B6200C9BD27 /* MainMenu.xib in Resources */,
 				41C8B42119FD008700C9BD27 /* README.md in Resources */,
 				4162749419FC0ACC0040A86D /* Images.xcassets in Resources */,
 				4162748C19FC0ACC0040A86D /* Credits.rtf in Resources */,
@@ -587,10 +595,10 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		41C8B42A19FD888200C9BD27 /* MainMenu.xib */ = {
+		41C8B43319FD8B6200C9BD27 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				41C8B42B19FD888200C9BD27 /* Base */,
+				41C8B43419FD8B6200C9BD27 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
