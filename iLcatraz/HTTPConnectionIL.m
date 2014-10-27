@@ -143,10 +143,24 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                             
                         }
                     }else{
+                        if ([[components objectAtIndex:4] isEqual:@"playlists"]){
+                            /*
+                             /media/playlists/ID/playlists
+                             */
+                            if ([components count]==5){
+                                /*
+                                 /media/playlists/ID/playlists
+                                 */
+                                ret=[service jsonPlaylitsOfFolderWithID:pid];
+                            }else{
+                                return [[RESTResponse alloc] initWithJSON:@"Use /mdeia/playlists API to get specific playlist" andStatus:400];
+                            }
+                        }else{
                         /*
                          /media/playlists/ID/<bad>
                          */
-                        return [[RESTResponse alloc] initWithJSON:[NSString stringWithFormat:@"\"%@\" is not known resource of a playlist. \"tracks\" expected",[components objectAtIndex:4]] andStatus:404];
+                        return [[RESTResponse alloc] initWithJSON:[NSString stringWithFormat:@"\"%@\" is not known resource of a playlist. \"tracks\" or \"playlists\" expected",[components objectAtIndex:4]] andStatus:404];
+                        }
                     }
                 }
             }

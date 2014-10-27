@@ -754,6 +754,9 @@ static NSDateFormatter* dateFormatter=NULL;
     else
         return [components objectAtIndex:1];
 };
+- (NSString*) jsonPlaylitsOfFolderWithID:(NSString*) pid{
+    return [self jsonForCode:[NSString stringWithFormat:@"tell application \"iTunes\"\n set f to first item of (playlists whose persistent ID is \"%@\")\n set results to {}\n repeat with p in playlists\n try\n if p's parent = f then set end of results to p's properties\n end try\n end repeat\n results\n end tell",pid]];
+};
 
 
 @end
