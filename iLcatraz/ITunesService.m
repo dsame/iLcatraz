@@ -143,7 +143,7 @@ static NSDateFormatter* dateFormatter=NULL;
                     [ret appendString:item];
                 }
             }
-            if (ret==NULL) return NULL;
+            if (ret==NULL) return @"[]";
             return [[@"[" stringByAppendingString:[NSString stringWithString:ret]] stringByAppendingString:@"]"];
         }
         case 'cUsP': {
