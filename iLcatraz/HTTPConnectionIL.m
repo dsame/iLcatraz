@@ -108,9 +108,12 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                              /media/playlists/ID/tracks
                              */
                             c=[service countOfTracksOfPlaylistWithID:pid];
-                            if ([method isEqualToString:@"GET"])
-                                ret=[service jsonTracksOfPlaylistWithID:pid];
-                            else if ([method isEqualToString:@"HEAD"]){
+                            if ([method isEqualToString:@"GET"]){
+                                if (c==0)
+                                    ret=@"[]";
+                                else
+                                    ret=[service jsonTracksOfPlaylistWithID:pid];
+                            } else if ([method isEqualToString:@"HEAD"]){
                                 ret=@"";
                             }
                         }else{
