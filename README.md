@@ -1,7 +1,7 @@
 iLcatraz
 ========
 
-iTunes REST server to help your escape Aplles's jail. 
+iTunes REST server to help your escape Apples's jail. 
 
 Generally you do not need this package, it has nothing useful by itself.
 The others guys may ask you to install the iLcatrase to make their applications to run.
