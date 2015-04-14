@@ -125,6 +125,8 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                                 /*
                                  /media/playlists/ID/tracks/ID
                                  */
+                                NSString *trackPath=[service pathForTrackWithID:tid  ofPlaysitWithID:pid];
+                                trackLocation=[service locationForTrackPath:trackPath];
                                 ret=[service jsonTrackWithID:tid ofPlaysitWithID:pid];
                             }else{
                                 /*

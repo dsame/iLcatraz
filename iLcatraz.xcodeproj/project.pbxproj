@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410844B51AADF62300919A62 /* NSString+EString.m in Sources */ = {isa = PBXBuildFile; fileRef = 410844B41AADF62300919A62 /* NSString+EString.m */; };
 		4162747C19FC0ACC0040A86D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4162747B19FC0ACC0040A86D /* Cocoa.framework */; };
 		4162748619FC0ACC0040A86D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4162748419FC0ACC0040A86D /* InfoPlist.strings */; };
 		4162748819FC0ACC0040A86D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4162748719FC0ACC0040A86D /* main.m */; };
@@ -67,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		410844B31AADF62300919A62 /* NSString+EString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EString.h"; sourceTree = "<group>"; };
+		410844B41AADF62300919A62 /* NSString+EString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EString.m"; sourceTree = "<group>"; };
 		4162747819FC0ACC0040A86D /* iLcatraz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLcatraz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4162747B19FC0ACC0040A86D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4162747E19FC0ACC0040A86D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -239,6 +242,8 @@
 				4162748219FC0ACC0040A86D /* Supporting Files */,
 				41C8B42719FD2DEE00C9BD27 /* FileResponse.h */,
 				41C8B42819FD2DEE00C9BD27 /* FileResponse.m */,
+				410844B31AADF62300919A62 /* NSString+EString.h */,
+				410844B41AADF62300919A62 /* NSString+EString.m */,
 			);
 			path = iLcatraz;
 			sourceTree = "<group>";
@@ -530,6 +535,7 @@
 				41C8B3E319FC0BAA00C9BD27 /* HTTPRedirectResponse.m in Sources */,
 				41C8B3DE19FC0BAA00C9BD27 /* MultipartMessageHeaderField.m in Sources */,
 				41C8B40119FC0C0700C9BD27 /* DDTTYLogger.m in Sources */,
+				410844B51AADF62300919A62 /* NSString+EString.m in Sources */,
 				4162748819FC0ACC0040A86D /* main.m in Sources */,
 				41C8B40D19FC0D4C00C9BD27 /* HTTPConnectionIL.m in Sources */,
 				41C8B3FD19FC0C0700C9BD27 /* DDAbstractDatabaseLogger.m in Sources */,
@@ -638,7 +644,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -671,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -685,7 +691,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iLcatraz/iLcatraz-Prefix.pch";
 				INFOPLIST_FILE = "iLcatraz/iLcatraz-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -700,7 +706,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iLcatraz/iLcatraz-Prefix.pch";
 				INFOPLIST_FILE = "iLcatraz/iLcatraz-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -68,7 +68,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     [httpServer setConnectionClass:[HTTPConnectionIL class]];
     
     
-    [httpServer setType:@"_http._tcp."];
+    [httpServer setType:@"_ilcatraz._tcp."];
     
     BOOL randomPort=[[NSUserDefaults standardUserDefaults] boolForKey:@"randomPort"];
     if (!randomPort){

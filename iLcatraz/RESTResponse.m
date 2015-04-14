@@ -1,5 +1,6 @@
 #import "RESTResponse.h"
 #import "HTTPLogging.h"
+#import "NSString+EString.h"
 
 #if ! __has_feature(objc_arc)
 #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
@@ -48,6 +49,7 @@ return response;
 		
 		offset = 0;
 		jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+        location = [location urlencode];
         headers = [NSDictionary dictionaryWithObjectsAndKeys: @"application/json; charset=utf-8",@"Content-Type",location,@"X-iTunes-Location",nil];
         status=aStatus;
 	}
