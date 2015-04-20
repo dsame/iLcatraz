@@ -40,6 +40,12 @@
 <p itemprop="description">This lightweight service gives a way to access iTunes database from virtually any networked device without having to deal with the proprietary DAAP protocol.</p>
 
 <p>The service launched on the Mac provides simple REST protocol to list and download iTunes playlists and tracks from that Mac.</p>
+</section>
+    <section class="main-content">
+<h3>Companion software</h3>
+<p>While the service is general purpose and is not intend to be used directly it was developed keeping in mind Android syncing tool and here it is: <a href="https://play.google.com/store/apps/details?id=me.dsa.ilcatraz.sync">IlcatrazSync</a>. It's must have app for those who have both Mac iTunes music collection and android handlets.
+</section>
+    <section class="main-content">
 <h3>Features</h3>
 <p>Resource request sample: <tt>http://localhost:8123/media/playlists/F84F6DB889F6AD62/tracks/23A23165199F41A6</tt></p>
 <div style="float:right;width: 130px;">
@@ -82,7 +88,22 @@
         <p>If requests  have a result of an array of the resources the header <tt>X-Count</tt> contains length of the result. Use <tt>HEAD</tt> method to estimate the request cost.</p>
         <p>If requests  have a file as the result then  the header <tt>X-Location</tt> contains path of the file inside iTunes Library. Use <tt>HEAD</tt> method if necessary.</p>
 
-<p>iLcatrz publishes itsel on Bonjour as <tt>_ilcatraz._tcp.</tt></p>
+</section>
+
+    <section class="main-content">
+<h3>Implementation details</h3>
+<p>We did not re-engineering native DAAP protocol to avoid license issues and its changes. Neither we parsed the XML database files.</p>
+<p>Instead iLcatraz runs AppleScript against running instance of iTunes and it looks nothing but ordinal client using completely legal protocol accessing iTunes. Besides legality we are sure the playlists and tracks are presented in the very same way as they would by iTunes itself.</p>
+<p>Having these benefits causes few significant drawbacks:</p>
+<ul>
+<li>iTunes always sits in the memory</li>
+<li>Requests are noticiable slow</li>
+<li>Requests that return too long, above 300 items, playlist may long forever</p>
+<li>Parallel requests may hang the service</p>
+</ul>
+<p>Keep these issues in mind and do not try to use iLcatraz in the environment it does not fit to.</p>
+<p>
+<p>Last but not least: iLcatrz publishes itsel on Bonjour as <tt>_ilcatraz._tcp.</tt></p>
 </section>
 
 <section class="main-content" itemscope itemtype="http://www.schema.org/Offer">
