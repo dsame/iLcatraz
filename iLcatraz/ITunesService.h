@@ -31,8 +31,11 @@
 - (NSInteger) countOfTracksOfPlaylistWithID:(NSString*) pid;
 - (NSString*) jsonTracksOfPlaylistWithID:(NSString*) pid;
 - (NSString*) jsonPlaylitsOfFolderWithID:(NSString*) pid;
+- (NSString*) setRatingOfTrackWithID:(NSString*) pid to:(NSString*)rating;
 - (NSString*) jsonTrackWithID:(NSString*)tid ofPlaysitWithID:(NSString*)pid;
 - (NSString*) pathForTrackWithID:(NSString*)tid ofPlaysitWithID:(NSString*)pid;
+- (NSString*) jsonTrackWithID:(NSString*)tid;
+- (NSString*) pathForTrackWithID:(NSString*)tid;
 - (NSString*) locationForTrackPath:(NSString*)path;
 
 @end

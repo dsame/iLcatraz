@@ -169,13 +169,78 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                     }
                 }
             }
-            
+        } else if ([[components objectAtIndex:2] isEqual:@"tracks"]){
+            if ([components count]>3){
+                /*
+                 /media/tracks/ID...
+                 */
+                NSString* tid=[HTTPConnectionIL sanitizePID:[components objectAtIndex:3]];
+                if ([components count]==4){
+                    /*
+                     /media/tracks/ID
+                     */
+                    if ([method isEqualToString:@"PATCH"]){
+                        NSData *data = [request body];
+                        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                        
+                        NSArray *fields=[str componentsSeparatedByString:@"&"];
+                        
+                        int updatec=0;
+                        NSString *field;
+                        NSEnumerator *fi=[fields objectEnumerator];
+                        
+                        while (field = [fi nextObject]){
+                            NSArray *pair=[field componentsSeparatedByString:@"="];
+                            if ([pair count]!=2){
+                                return [[RESTResponse alloc]
+                                        initWithJSON:@"PATCH must be in form param1=value&param2=value2&..." andStatus:400];
+                            }
+                            NSString *param=[pair objectAtIndex:0];
+                            NSString *value=[pair objectAtIndex:1];
+                            if ([@"rating" isEqualToString:param]){
+                                updatec++;
+                                [service setRatingOfTrackWithID:tid to:value];
+                            }
+                        }
+                        if (updatec==0){
+                            return [[RESTResponse alloc]
+                                    initWithJSON:@"No parameters" andStatus:400];
+                        }
+                    }
+                    
+                    if ([method isEqualToString:@"GET"] || [method isEqualToString:@"PATCH"]) {
+                        NSString *trackPath=[service pathForTrackWithID:tid];
+                        trackLocation=[service locationForTrackPath:trackPath];
+                        ret=[service jsonTrackWithID:tid];
+                    }else {
+                        return [[RESTResponse alloc] initWithJSON:@"Only GET and PATCH methods are allowed to this resource" andStatus:400];
+                    }
+                }else{
+                    /*
+                     /media/tracks/ID/...
+                     */
+                    NSString* trackAttr=[HTTPConnectionIL sanitizePID:[components objectAtIndex:4]];
+                    if ([trackAttr isEqualToString:@"file"] && [components count]==5    ){
+                        NSString *trackPath=[service pathForTrackWithID:tid];
+                        trackLocation=[service locationForTrackPath:trackPath];
+                        if ([method isEqualToString:@"GET"])
+                            return [[FileResponse alloc] initWithFilePath:trackPath andLocation:trackLocation forConnection:self];
+                        else if ([method isEqualToString:@"HEAD"]){
+                            ret=@"";
+                        }
+                    }else{
+                        return [[RESTResponse alloc] initWithJSON:[NSString stringWithFormat:@"\"%@\" is not known resource of a track. \"file\" expected.",[components objectAtIndex:4]] andStatus:404];
+                    }
+                }
+            }else{
+                 return [[RESTResponse alloc] initWithJSON:@"ID must follow \"tracks\" resources request" andStatus:400];
+            }
         }else{
             /*
              /media/<bad>
              */
             
-            return [[RESTResponse alloc] initWithJSON:[NSString stringWithFormat:@"\"%@\" is not known resource of the media library. \"playlists\" expected.",[components objectAtIndex:2]] andStatus:404];
+            return [[RESTResponse alloc] initWithJSON:[NSString stringWithFormat:@"\"%@\" is not known resource of the media library. \"playlists\" or \"tracks\" expected.",[components objectAtIndex:2]] andStatus:404];
         }
         
         if (ret!=NULL)
@@ -195,5 +260,24 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     @catch (NSException *exception) {
         return [[RESTResponse alloc] initWithText:[exception reason] andStatus:500];
     }
+}
+- (BOOL)expectsRequestBodyFromMethod:(NSString *)method atPath:(NSString *)path
+{
+    if ([method isEqualToString:@"PATCH"])
+        return YES;
+    
+    return [super expectsRequestBodyFromMethod:method atPath:path];
+}
+
+- (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path
+{
+    if ([method isEqualToString:@"PATCH"] && [path rangeOfString:@"/media/tracks/"].location == 0)
+        return YES;
+    return [super supportsMethod:method atPath:path];
+}
+
+- (void)processBodyData:(NSData *)postDataChunk
+{
+    [request setBody:postDataChunk];
 }
 @end

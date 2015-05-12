@@ -724,10 +724,15 @@ static NSDateFormatter* dateFormatter=NULL;
 {
     return [self resultAsCount:[NSString stringWithFormat:@"tell application \"iTunes\"\n count of tracks of first item of (playlists whose persistent ID is \"%@\")\n end tell",pid]];
 };
+
+- (NSString*) setRatingOfTrackWithID:(NSString*) pid to:(NSString*)rating {
+    return [self jsonForCode:[NSString stringWithFormat:@"tell application \"iTunes\"\n set the rating of first item of (tracks whose persistent ID is \"%@\") to %@\n end tell",pid,rating]];
+}
+
 - (NSString*) jsonTrackWithID:(NSString*) pid {
     return [self jsonForCode:[NSString stringWithFormat:@"tell application \"iTunes\"\n properties of first item of (tracks whose persistent ID is \"%@\")\n end tell",pid]];
 }
-- (NSString*) locationForTrackWithID:(NSString*) pid{
+- (NSString*) pathForTrackWithID:(NSString*) pid{
     return [self copyResultAsString:[NSString stringWithFormat:@"tell application \"iTunes\"\n location of first item of (tracks whose persistent ID is \"%@\")\n end tell",pid]];
 }
 
@@ -741,6 +746,7 @@ static NSDateFormatter* dateFormatter=NULL;
 - (NSString*) jsonMediaPlaylistWithID:(NSString*)pid{
         return [self jsonForCode:[NSString stringWithFormat:@"tell application \"iTunes\"\n properties of first item of (playlists whose persistent ID is \"%@\")\n end tell",pid]];
 };
+
 - (NSString*) jsonTrackWithID:(NSString*)tid ofPlaysitWithID:(NSString*)pid{
     return [self jsonForCode:[NSString stringWithFormat:@"tell application \"iTunes\"\n properties of first item of (tracks of (first item  of (playlists whose persistent ID is \"%@\")) whose  persistent ID is \"%@\")\n end tell",pid,tid]];
 };
