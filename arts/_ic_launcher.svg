@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="48px"
+   version="1.1"
+   viewBox="0 0 48 48"
+   width="48px"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="_ic_launcher.svg"
+   inkscape:export-filename="/Users/dsa/AndroidStudioProjects/iLcatrazSync/app/src/main/res/drawable-xxxhdpi/ic_launcher.png"
+   inkscape:export-xdpi="360"
+   inkscape:export-ydpi="360">
+  <metadata
+     id="metadata18">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1211"
+     inkscape:window-height="638"
+     id="namedview16"
+     showgrid="false"
+     inkscape:zoom="4.9166667"
+     inkscape:cx="-13.525424"
+     inkscape:cy="24"
+     inkscape:window-x="66"
+     inkscape:window-y="75"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs6" />
+  <g
+     fill="none"
+     fill-rule="evenodd"
+     id="shadow"
+     stroke="none"
+     stroke-width="1">
+    <g
+       id="itunes">
+      <circle
+         cx="24"
+         cy="24"
+         fill="#3B7DC0"
+         r="24"
+         id="circle10" />
+      <path
+         d="M1.97043335,33.5389416 C4.66944207,39.7636084 9.92943691,44.6199732 16.421191,46.778809 L31.7503125,31.4496875 L31.7503113,15.1425003 L20.2340625,15.2753125 L1.97043335,33.5389416 Z"
+         fill="#000000"
+         fill-opacity="0.400000006"
+         id="path12" />
+      <path
+         d="M20.1649619,15.414997 C20.1649619,15.414997 22.9424655,13.8527832 25.960776,12.8762207 C28.9790866,11.8996582 32.7308393,11.5 32.7308393,11.5 L32.7308393,27.9911961 C32.7308393,29.2962016 32.565085,30.2802031 32.2335715,30.9432301 C31.902058,31.6062571 31.3390197,32.1535093 30.5444398,32.585003 C29.7498598,33.0164968 28.852682,33.2322404 27.8528794,33.2322404 C26.7057374,33.2322404 25.7901424,32.9033629 25.106067,32.2455981 C24.4219915,31.5878332 24.0799589,30.7380137 24.0799589,29.6961141 C24.0799589,28.6436903 24.485136,27.7359884 25.2955023,26.9729812 C26.1058686,26.2099739 27.1530146,25.828476 28.4369717,25.828476 C28.8579412,25.828476 29.228915,25.8653103 29.5499043,25.93898 C29.8708935,26.0126496 30.3944665,26.2020831 31.1206389,26.507286 L31.1206389,17.0780206 C31.1206389,17.0780206 29.2290856,17.0780206 26.7334811,17.8823242 C24.2378767,18.6866282 21.7278035,19.9984821 21.7278035,19.9984821 L21.7278035,31.1958106 C21.7278035,32.4692434 21.5594182,33.4611379 21.2226426,34.171524 C20.885867,34.88191 20.3070425,35.4475794 19.486152,35.8685489 C18.6652614,36.2895184 17.7707146,36.5 16.8024847,36.5 C15.6553428,36.5 14.7476408,36.1763845 14.0793517,35.5291439 C13.4110626,34.8819033 13.0769231,34.0373458 13.0769231,32.9954463 C13.0769231,31.8904013 13.4768381,30.9616512 14.2766802,30.2091682 C15.0765223,29.4566852 16.1236683,29.0804493 17.4181495,29.0804493 C18.2390401,29.0804493 19.1546351,29.3225031 20.1649619,29.8066181 L20.1649619,15.414997 Z"
+         fill="#FFFFFF"
+         id="path14" />
+    </g>
+  </g>
+  <g
+     id="Icons with numbers"
+     style="fill:#00ffff;fill-opacity:0.47272727;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="matrix(3.409,0,0,3.4146154,-3.3910494,-3.2192311)">
+    <g
+       transform="translate(-336,-432)"
+       id="Group"
+       style="fill:#00ffff;fill-opacity:0.47272727">
+      <path
+         id="Triangle 214 copy"
+         d="m 346,437.98932 0,9.01068 -9,0 2.8993,-2.90274 c -1.29892,-1.18615 -3.19419,-3.40922 -2.86729,-6.06687 0.59898,-3.03425 2.3419,-5.08761 7.02015,-5.08761 5.23861,0 7.02295,4.5245 7.02295,5.00479 -3.06539,-2.63921 -5.20559,-2.95143 -7.05803,-2.95143 -1.85244,0 -2.96897,1.37604 -2.96897,2.95143 0,1.03395 1.27887,2.17608 2.15794,2.83902 z m 0,0"
+         inkscape:connector-curvature="0"
+         style="fill:#00ffff;fill-opacity:0.47272727" />
+    </g>
+  </g>
+</svg>

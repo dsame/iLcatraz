@@ -50,7 +50,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 - (void)switchPolicy{
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"showMenu"] intValue]==1){
-        _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:16];
+        _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:22];
         [_statusItem setMenu:_statusMenu];
         [_statusItem setImage:[[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"glogo" ofType:@"png"]]];
         [_statusItem setHighlightMode:YES];
