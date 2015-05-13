@@ -271,7 +271,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path
 {
-    if ([method isEqualToString:@"PATCH"] && [path rangeOfString:@"/media/tracks/"].location == 0)
+    if (([method isEqualToString:@"PATCH"] || [method isEqualToString:@"POST"])&& [path rangeOfString:@"/media/tracks/"].location == 0)
         return YES;
     return [super supportsMethod:method atPath:path];
 }
