@@ -179,7 +179,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                     /*
                      /media/tracks/ID
                      */
-                    if ([method isEqualToString:@"PATCH"]){
+                    if ([method isEqualToString:@"PATCH"] || [method isEqualToString:@"POST"]){
                         NSData *data = [request body];
                         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                         
@@ -208,12 +208,12 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                         }
                     }
                     
-                    if ([method isEqualToString:@"GET"] || [method isEqualToString:@"PATCH"]) {
+                    if ([method isEqualToString:@"GET"] || [method isEqualToString:@"PATCH"] || [method isEqualToString:@"POST"]) {
                         NSString *trackPath=[service pathForTrackWithID:tid];
                         trackLocation=[service locationForTrackPath:trackPath];
                         ret=[service jsonTrackWithID:tid];
                     }else {
-                        return [[RESTResponse alloc] initWithJSON:@"Only GET and PATCH methods are allowed to this resource" andStatus:400];
+                        return [[RESTResponse alloc] initWithJSON:@"Only GET and PATCH(POST) methods are allowed to this resource" andStatus:400];
                     }
                 }else{
                     /*
